@@ -27,9 +27,10 @@ jobs:
           restore-keys: |
             gradle-cache-${{ runner.os }}-
 
-      - name: Run Gradle assembleDebug
+      - name: Run Gradle assembleDebug (using provided Gradle version)
         uses: gradle/gradle-build-action@v2
         with:
+          gradle-version: '9.1'
           arguments: assembleDebug
 
       - name: Upload debug APK
